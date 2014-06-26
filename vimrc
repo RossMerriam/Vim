@@ -7,7 +7,7 @@ let mapleader=","
 let maplocalleader=","
 
 set nocompatible				" more or less a reset for vim
-filetype off                  " required
+filetype off					" required
 
 
 " set the runtime path to include Vundle and initialize
@@ -16,10 +16,14 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'reedes/vim-colors-pencil'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+" All of your Plugins must be added before the following line
+call vundle#end()				" required
 
 
-
-filetype plugin indent on		" filetype-specific indent files
+filetype plugin indent on		" required
 syntax on						" syntax highlighting
 
 
