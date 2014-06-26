@@ -44,7 +44,7 @@ set expandtab					" tabs are spaces not tabs
 
 
 " Fonts
-set guifont=Monaco:h16
+set guifont=Monaco:h14
 
 " UI Config
 set number						" show line numbers
