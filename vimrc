@@ -20,6 +20,7 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
+Plugin 'kchmck/vim-coffee-script'
 " All of your Plugins must be added before the following line
 call vundle#end()				" required
 
@@ -137,4 +138,5 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
+:set background=dark
 :colorscheme pencil
