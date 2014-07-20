@@ -16,12 +16,15 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'reedes/vim-colors-pencil'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'groenewege/vim-less'
+
 " All of your Plugins must be added before the following line
 call vundle#end()				" required
 
