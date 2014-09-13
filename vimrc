@@ -25,7 +25,11 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
-Plugin 'gregsexton/MatchTag'
+Plugin 'gregsexton/MatchTag' " Highlights matching HTML tag
+Plugin 'othree/html5.vim' " HTML5 omnicomplete function
+Plugin 'hail2u/vim-css3-syntax' " CSS3 syntax support
+Plugin 'jelera/vim-javascript-syntax' " Better Javascript Sytax
+Plugin 'cakebaker/scss-syntax.vim' " SCSS syntax
 Plugin 'digitaltoad/vim-jade'
 
 " All of your Plugins must be added before the following line
@@ -84,6 +88,7 @@ set autoindent					" when no filetype detected keep same indent as
 								" line you're currently on
 set nostartofline				" don't always start at beginning of line
 set virtualedit=onemore			" cursor is allowed to go one beyond last character
+
 set linespace=0					" no extra spaces between rows
 set title						" show title in console title bar
 set showmode					" show current mode
