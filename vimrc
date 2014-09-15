@@ -21,12 +21,12 @@ Plugin 'reedes/vim-colors-pencil'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat' " Adds repeat functionality to some plugins
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
 Plugin 'gregsexton/MatchTag' " Highlights matching HTML tag
-Plugin 'othree/html5.vim' " HTML5 omnicomplete function
 Plugin 'hail2u/vim-css3-syntax' " CSS3 syntax support
 Plugin 'jelera/vim-javascript-syntax' " Better Javascript Sytax
 Plugin 'cakebaker/scss-syntax.vim' " SCSS syntax
@@ -129,6 +129,12 @@ if exists("&undodir")
 	set undodir=~/.dotfiles/vim/undo
 endif
 
+" AngularJs ignore ng- attribute in HTML linting
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+
+" CSS Autocomplete
+set omnifunc=csscomplete#CompleteCSS
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 
 " CtrlP mapping to <Leader>o
 let g:ctrlp_map = '<leader>o'
@@ -150,5 +156,5 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-:set background=dark
+:set background=light
 :colorscheme pencil
