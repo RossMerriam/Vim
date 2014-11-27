@@ -1,5 +1,6 @@
 " Vim Configuration File
 " Author: Ross Merriam
+" 2014
 
 
 " Mapleader Customization
@@ -11,17 +12,19 @@ filetype off					" required
 
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat' " Adds repeat functionality to some plugins
+Plugin 'tpope/vim-haml' " runtime files for Haml, Sass, and SCSS
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
@@ -132,15 +135,61 @@ endif
 " AngularJs ignore ng- attribute in HTML linting
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
-" CSS Autocomplete
-set omnifunc=csscomplete#CompleteCSS
+" Neocomplcache Settings 
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+
+" Enable heavy features.
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-l>     neocomplcache#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return neocomplcache#smart_close_popup() . "\<CR>"
+  " For no inserting <CR> key.
+  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
+" Close popup by <Space>.
+inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+
+" AutoComplPop like behavior.
+let g:neocomplcache_enable_auto_select = 1
+
+
+" OmniCompletion
+autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 
 " CtrlP mapping to <Leader>o
 let g:ctrlp_map = '<leader>o'
-
-" Compile CoffeeScript on save
-autocmd BufWritePost,FileWritePost *.coffee silent !coffee -c <afile>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
