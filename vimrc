@@ -7,9 +7,8 @@
 let mapleader=","
 let maplocalleader=","
 
-set nocompatible				" more or less a reset for vim
-filetype off					" required
-
+set nocompatible							" more or less a reset for vim
+filetype off								" required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
@@ -20,31 +19,32 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'matchit.zip'
 Plugin 'reedes/vim-colors-pencil'
+Plugin 'blerins/flattown'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat' " Adds repeat functionality to some plugins
-Plugin 'tpope/vim-haml' " runtime files for Haml, Sass, and SCSS
+Plugin 'tpope/vim-repeat'				" Adds repeat functionality to some plugins
+Plugin 'tpope/vim-haml'					" runtime files for Haml, Sass, and SCSS
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'groenewege/vim-less'
-Plugin 'gregsexton/MatchTag' " Highlights matching HTML tag
-Plugin 'hail2u/vim-css3-syntax' " CSS3 syntax support
-Plugin 'jelera/vim-javascript-syntax' " Better Javascript Sytax
-Plugin 'cakebaker/scss-syntax.vim' " SCSS syntax
+Plugin 'gregsexton/MatchTag'			" Highlights matching HTML tag
+Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
+Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
+Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 Plugin 'digitaltoad/vim-jade'
 
 " All of your Plugins must be added before the following line
-call vundle#end()				" required
+call vundle#end()						" required
 
-
-filetype plugin indent on		" required
-syntax on						" syntax highlighting
+filetype plugin indent on				" required
+syntax on								" syntax highlighting
 
 
 " WildMenu Configs
-set wildmenu					" visual autocomplete for command menu
+set wildmenu							" visual autocomplete for command menu
 
 " Ignore these files when completing:
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
@@ -66,10 +66,9 @@ set tabstop=4					" number of visual spaces per TAB
 set softtabstop=4				" number of spaces in tab when editing
 set shiftwidth=4				" use 4 spaces instead of tabs
 set expandtab					" tabs are spaces not tabs
-
-
+"
 " Fonts
-set guifont=Monaco:h14
+set guifont=Monaco:h16
 
 " UI Config
 set number						" show line numbers
@@ -172,7 +171,7 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 " Close popup by <Space>.
-inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
+"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
 
 " AutoComplPop like behavior.
 let g:neocomplcache_enable_auto_select = 1
@@ -205,5 +204,4 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-:set background=light
-:colorscheme pencil
+:colorscheme flattown
