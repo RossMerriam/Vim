@@ -21,7 +21,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'matchit.zip'
 Plugin 'reedes/vim-colors-pencil'
-Plugin 'blerins/flattown'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'				" Adds repeat functionality to some plugins
@@ -35,6 +34,10 @@ Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
 Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
 Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 Plugin 'digitaltoad/vim-jade'
+
+" Colorschemes
+Plugin 'morhetz/gruvbox'
+Plugin 'blerins/flattown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()						" required
@@ -68,7 +71,8 @@ set shiftwidth=4				" use 4 spaces instead of tabs
 set expandtab					" tabs are spaces not tabs
 "
 " Fonts
-set guifont=Monaco:h16
+set guifont=sauce_code_powerline_light:h16
+
 
 " UI Config
 set number						" show line numbers
@@ -204,4 +208,9 @@ noremap <leader>ss :call StripWhitespace()<CR>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-:colorscheme flattown
+set background=dark
+if has("gui_running")
+	colorscheme gruvbox
+else
+	colorscheme flattown
+endif
