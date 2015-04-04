@@ -11,7 +11,7 @@ set nocompatible							" more or less a reset for vim
 filetype off								" required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.dotfiles/vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
