@@ -128,13 +128,6 @@ if has('statusline')
 endif
 
 
-" Centralize backups, swapfiles and undo history
-set backupdir=~/.dotfiles/vim/backups
-set directory=~/.dotfiles/vim/swaps
-if exists("&undodir")
-	set undodir=~/.dotfiles/vim/undo
-endif
-
 " AngularJs ignore ng- attribute in HTML linting
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 
