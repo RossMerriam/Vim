@@ -70,9 +70,12 @@ set softtabstop=4				" number of spaces in tab when editing
 set shiftwidth=4				" use 4 spaces instead of tabs
 set expandtab					" tabs are spaces not tabs
 "
-" Fonts
-set guifont=sauce_code_powerline_light:h16
-
+" Gui Options
+set guifont=Monaco\ for\ Powerline:h12
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
 
 " UI Config
 set number						" show line numbers
