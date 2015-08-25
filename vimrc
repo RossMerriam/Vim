@@ -71,7 +71,20 @@ set shiftwidth=4				" use 4 spaces instead of tabs
 set expandtab					" tabs are spaces not tabs
 "
 " Gui Options
-set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 16
+  elseif has("gui_photon")
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
+  elseif has("gui_kde")
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
+  elseif has("x11")
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
+  else
+    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
+  endif
+endif
+
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
