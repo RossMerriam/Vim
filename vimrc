@@ -118,7 +118,8 @@ set linebreak					" don't wrap text in the middle of a word
 set visualbell					" don't beep that damned bell!
 set mouse=a						" let's use the mouse everywhere!
 set cmdheight=2					" avoids having to press <Enter> to continue
-set clipboard+=unnamed			" use the OS clipboard
+set clipboard=unnamed			" use the OS clipboard
+set clipboard=unnamedplus		" use the OS clipboard
 set esckeys						" allow cursor keys in insert mode
 set ttyfast						" optimize for fast terminal connections
 set confirm						" don't just fail a command for unsaved changes
