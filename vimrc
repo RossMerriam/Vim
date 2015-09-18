@@ -34,6 +34,7 @@ Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
 Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
 Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 Plugin 'digitaltoad/vim-jade'
+Plugin 'Townk/vim-autoclose'			" Auto close for brackets and html
 
 " Colorschemes
 Plugin 'morhetz/gruvbox'
