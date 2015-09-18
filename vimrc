@@ -198,8 +198,11 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-
 autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+
+" Nerdtree Ignore
+let NERDTreeIgnore = ['\.pyc$']
+
 
 " CtrlP mapping to <Leader>o
 let g:ctrlp_map = '<leader>o'
