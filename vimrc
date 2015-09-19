@@ -82,7 +82,7 @@ if has("gui_running")
   elseif has("x11")
     set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
   else
-	set guifont=Sauce\ Code\ Powerline\ Light:h14 	
+	set guifont=Sauce\ Code\ Powerline\ Light:h16 	
   endif
 endif
 
