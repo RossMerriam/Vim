@@ -1,7 +1,6 @@
 " Vim Configuration File
 " Author: Ross Merriam
-" 2014
-
+" 2015
 
 " Mapleader Customization
 let mapleader=","
@@ -16,25 +15,21 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Shougo/neocomplcache.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'matchit.zip'
-Plugin 'reedes/vim-colors-pencil'
 Plugin 'Glench/Vim-Jinja2-Syntax'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'				" Adds repeat functionality to some plugins
 Plugin 'tpope/vim-haml'					" runtime files for Haml, Sass, and SCSS
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'groenewege/vim-less'
 Plugin 'gregsexton/MatchTag'			" Highlights matching HTML tag
 Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
 Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
 Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 Plugin 'digitaltoad/vim-jade'
-Plugin 'Townk/vim-autoclose'			" Auto close for brackets and html
+Plugin 'digitaltoad/emmet-vim'
 
 " Colorschemes
 Plugin 'morhetz/gruvbox'
@@ -58,7 +53,6 @@ set wildignore+=*.egg-info/**
 
 set wildmode=full				" <TAB> cycles between all matching choices
 
-set showcmd						" show partial commands in the last line
 set pumheight=6					" keep a small completion window
 
 set hidden						" switch from an unsaved buffer w/o saving first
@@ -148,49 +142,6 @@ endif
 
 " AngularJs ignore ng- attribute in HTML linting
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-
-" Neocomplcache Settings 
-" Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
-" Use neocomplcache.
-let g:neocomplcache_enable_at_startup = 1
-" Use smartcase.
-let g:neocomplcache_enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-
-" Enable heavy features.
-" Use camel case completion.
-let g:neocomplcache_enable_camel_case_completion = 1
-" Use underbar completion.
-let g:neocomplcache_enable_underbar_completion = 1
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplcache#undo_completion()
-inoremap <expr><C-l>     neocomplcache#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  return neocomplcache#smart_close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  "return pumvisible() ? neocomplcache#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
-" Close popup by <Space>.
-"inoremap <expr><Space> pumvisible() ? neocomplcache#close_popup() : "\<Space>"
-
-" AutoComplPop like behavior.
-let g:neocomplcache_enable_auto_select = 1
-
 
 " OmniCompletion
 autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS
