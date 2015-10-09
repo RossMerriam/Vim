@@ -27,6 +27,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'gregsexton/MatchTag'					" Highlights matching HTML tag
 Plugin 'hail2u/vim-css3-syntax'					" CSS3 syntax support
 Plugin 'cakebaker/scss-syntax.vim'				" SCSS syntax
+Plugin 'kchmck/vim-coffee-script'				" Coffee Script syntax support
 Plugin 'digitaltoad/vim-jade'
 Plugin 'digitaltoad/emmet-vim'
 
