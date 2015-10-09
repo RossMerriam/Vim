@@ -26,8 +26,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
 Plugin 'gregsexton/MatchTag'					" Highlights matching HTML tag
 Plugin 'hail2u/vim-css3-syntax'					" CSS3 syntax support
-Plugin 'jelera/vim-javascript-syntax'			" Better Javascript Syntax
-Plugin 'othree/javascript-libraries-syntax.vim'	" Javascript Syntax libraries
 Plugin 'cakebaker/scss-syntax.vim'				" SCSS syntax
 Plugin 'digitaltoad/vim-jade'
 Plugin 'digitaltoad/emmet-vim'
