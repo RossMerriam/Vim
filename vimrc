@@ -9,38 +9,42 @@ let maplocalleader=","
 set nocompatible							" more or less a reset for vim
 filetype off								" required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has('nvim')
+	call plug#begin('~/.vim/bundle/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'matchit.zip'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'						" Adds repeat functionality to some plugins
-Plugin 'tpope/vim-haml'							" runtime files for Haml, Sass, and SCSS
-Plugin 'scrooloose/syntastic'
-Plugin 'kien/ctrlp.vim'
-Plugin 'gregsexton/MatchTag'					" Highlights matching HTML tag
-Plugin 'hail2u/vim-css3-syntax'					" CSS3 syntax support
-Plugin 'cakebaker/scss-syntax.vim'				" SCSS syntax
-Plugin 'kchmck/vim-coffee-script'				" Coffee Script syntax support
-Plugin 'digitaltoad/vim-jade'
-Plugin 'digitaltoad/emmet-vim'
 
-" Colorschemes
-Plugin 'morhetz/gruvbox'
-Plugin 'blerins/flattown'
+	call plug#end()
+else 
+	" use vundle if vanilla vim
+	" set the runtime path to include Vundle and initialize
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+	Plugin 'gmarik/Vundle.vim'
+	Plugin 'Glench/Vim-Jinja2-Syntax'
+	Plugin 'tpope/vim-surround'
+	Plugin 'tpope/vim-repeat'			" Adds repeat functionality to some plugins
+	Plugin 'tpope/vim-haml'				" runtime files for Haml, Sass, and SCSS
+	Plugin 'scrooloose/syntastic'
+	Plugin 'kien/ctrlp.vim'
+	Plugin 'Valloric/YouCompleteMe'
+	Plugin 'kchmck/vim-coffee-script'
+	Plugin 'groenewege/vim-less'
+	Plugin 'gregsexton/MatchTag'			" Highlights matching HTML tag
+	Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
+	Plugin 'jelera/vim-javascript-syntax'		" Better Javascript Sytax
+	Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
+	Plugin 'digitaltoad/vim-jade'
 
-" All of your Plugins must be added before the following line
-call vundle#end()						" required
+	" Colorschemes
+	Plugin 'morhetz/gruvbox'
+	Plugin 'blerins/flattown'
 
-filetype plugin indent on				" required
-syntax on								" syntax highlighting
+	" All of your Plugins must be added before the following line
+	call vundle#end()	
+endif
 
+filetype plugin indent on	" required
+syntax on			" syntax highlighting
 
 " WildMenu Configs
 set wildmenu							" visual autocomplete for command menu
@@ -53,9 +57,10 @@ set wildignore+=*.egg-info/**
 
 set wildmode=full				" <TAB> cycles between all matching choices
 
+set showcmd					" show partial commands in the last line
 set pumheight=6					" keep a small completion window
 
-set hidden						" switch from an unsaved buffer w/o saving first
+set hidden					" switch from an unsaved buffer w/o saving first
 set lazyredraw					" redraw only when we need to
 
 
@@ -86,8 +91,8 @@ set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
 " UI Config
-set number						" show line numbers
-set showcmd						" show command in bottom bar
+set number					" show line numbers
+set showcmd					" show command in bottom bar
 set cursorline					" highlight current line
 
 
@@ -99,28 +104,26 @@ set ignorecase					" ignore case when searching
 set smartcase					" pay attention to case when uppercase is entered
 
 " Settings that vim "Purists" would argue breaks the vimmyness of our config
-set backspace=indent,eol,start	" allow backspacing over autoindent, line breaks
-								" and start of insert action
+set backspace=indent,eol,start			" allow backspacing over autoindent, line breaks
+						" and start of insert action
 set autoindent					" when no filetype detected keep same indent as
-								" line you're currently on
+						" line you're currently on
 set nostartofline				" don't always start at beginning of line
-set virtualedit=onemore			" cursor is allowed to go one beyond last character
+set virtualedit=onemore				" cursor is allowed to go one beyond last character
 
 set linespace=0					" no extra spaces between rows
-set title						" show title in console title bar
+set title					" show title in console title bar
 set showmode					" show current mode
 set linebreak					" don't wrap text in the middle of a word
 set visualbell					" don't beep that damned bell!
-set mouse=a						" let's use the mouse everywhere!
+set mouse=a					" let's use the mouse everywhere!
 set cmdheight=2					" avoids having to press <Enter> to continue
-"set clipboard=unnamed			" use the OS clipboard
-"set clipboard=unnamedplus		" use the OS clipboard
-set esckeys						" allow cursor keys in insert mode
-set ttyfast						" optimize for fast terminal connections
-set confirm						" don't just fail a command for unsaved changes
-								" be more helpful and raise a dialogue!
+set esckeys					" allow cursor keys in insert mode
+set ttyfast					" optimize for fast terminal connections
+set confirm					" don't just fail a command for unsaved changes
+						" be more helpful and raise a dialogue!
 set binary
-set noeol						" don't add empty newlines at the end of files
+set noeol					" don't add empty newlines at the end of files
 set scrolloff=3					" start scrolling 3 lines before horizonal border
 
 set modeline					" respect modelines! if someone wanted something
