@@ -31,9 +31,10 @@ else
 	Plugin 'groenewege/vim-less'
 	Plugin 'gregsexton/MatchTag'			" Highlights matching HTML tag
 	Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
-	Plugin 'jelera/vim-javascript-syntax'		" Better Javascript Sytax
+	Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
 	Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 	Plugin 'digitaltoad/vim-jade'
+	Plugin 'pearofducks/ansible-vim'
 
 	" Colorschemes
 	Plugin 'morhetz/gruvbox'
