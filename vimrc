@@ -25,6 +25,7 @@ else
 	Plugin 'tpope/vim-repeat'			" Adds repeat functionality to some plugins
 	Plugin 'tpope/vim-haml'				" runtime files for Haml, Sass, and SCSS
 	Plugin 'scrooloose/syntastic'
+	Plugin 'scrooloose/nerdtree'
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'Valloric/YouCompleteMe'
 	Plugin 'kchmck/vim-coffee-script'
@@ -35,6 +36,7 @@ else
 	Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 	Plugin 'digitaltoad/vim-jade'
 	Plugin 'pearofducks/ansible-vim'
+	Plugin 'mattn/emmet-vim'
 
 	" Colorschemes
 	Plugin 'morhetz/gruvbox'
