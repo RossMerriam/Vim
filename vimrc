@@ -21,6 +21,7 @@ else
 	call vundle#begin()
 	Plugin 'gmarik/Vundle.vim'
 	Plugin 'Glench/Vim-Jinja2-Syntax'
+	Plugin 'lumiliet/vim-twig'			" Twig syntax hilighting
 	Plugin 'tpope/vim-surround'
 	Plugin 'tpope/vim-repeat'			" Adds repeat functionality to some plugins
 	Plugin 'tpope/vim-haml'				" runtime files for Haml, Sass, and SCSS
