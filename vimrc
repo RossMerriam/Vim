@@ -27,11 +27,11 @@ else
 	Plugin 'tpope/vim-haml'				" runtime files for Haml, Sass, and SCSS
 	Plugin 'scrooloose/syntastic'
 	Plugin 'scrooloose/nerdtree'
-	Plugin 'kien/ctrlp.vim'
-	Plugin 'kchmck/vim-coffee-script'
-	Plugin 'groenewege/vim-less'
+	Plugin 'mileszs/ack.vim'			" Ack configuration for vim
+	Plugin 'junegunn/fzf.vim'			" Additional fzf functionality
 	Plugin 'gregsexton/MatchTag'			" Highlights matching HTML tag
 	Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
+	Plugin 'vim-scripts/svg.vim'			" SVG syntax
 	Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
 	Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 	Plugin 'digitaltoad/vim-jade'
@@ -161,9 +161,19 @@ autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 " Nerdtree Ignore
 let NERDTreeIgnore = ['\.pyc$']
 
+" Fzf support
+set rtp+=/usr/local/opt/fzf
 
-" CtrlP mapping to <Leader>o
-let g:ctrlp_map = '<leader>o'
+" Fzf keybindings
+nmap ; :Buffers<CR>
+nmap <Leader>t :Files<CR>
+nmap <Leader>r :Tags<CR>
+
+" Ack keybindings
+nmap <M-k>    :Ack! "\b<cword>\b" <CR>
+nmap <Esc>k   :Ack! "\b<cword>\b" <CR>
+nmap <M-S-k>  :Ggrep! "\b<cword>\b" <CR>
+nmap <Esc>K   :Ggrep! "\b<cword>\b" <CR>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
