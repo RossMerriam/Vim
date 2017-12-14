@@ -96,7 +96,7 @@ set guioptions-=L  "remove left-hand scroll bar
 " UI Config
 set number					" show line numbers
 set showcmd					" show command in bottom bar
-set cursorline					" highlight current line
+set cursorline				" highlight current line
 
 
 " Search
@@ -120,15 +120,14 @@ set showmode					" show current mode
 set linebreak					" don't wrap text in the middle of a word
 set visualbell					" don't beep that damned bell!
 set mouse=a					" let's use the mouse everywhere!
-set cmdheight=2					" avoids having to press <Enter> to continue
+set cmdheight=2				" avoids having to press <Enter> to continue
 set esckeys					" allow cursor keys in insert mode
 set ttyfast					" optimize for fast terminal connections
 set confirm					" don't just fail a command for unsaved changes
-						" be more helpful and raise a dialogue!
+							" be more helpful and raise a dialogue!
 set binary
-set noeol					" don't add empty newlines at the end of files
+set noeol						" don't add empty newlines at the end of files
 set scrolloff=3					" start scrolling 3 lines before horizonal border
-
 set modeline					" respect modelines! if someone wanted something
 set modelines=4					" formatted that way we'll see it that way!
 
@@ -170,10 +169,10 @@ nmap <Leader>t :Files<CR>
 nmap <Leader>r :Tags<CR>
 
 " Ack keybindings
-nmap <M-k>    :Ack! "\b<cword>\b" <CR>
-nmap <Esc>k   :Ack! "\b<cword>\b" <CR>
-nmap <M-S-k>  :Ggrep! "\b<cword>\b" <CR>
-nmap <Esc>K   :Ggrep! "\b<cword>\b" <CR>
+" nmap <M-k>    :Ack! "\b<cword>\b" <CR>
+" nmap <Esc>k   :Ack! "\b<cword>\b" <CR>
+" nmap <M-S-k>  :Ggrep! "\b<cword>\b" <CR>
+" nmap <Esc>K   :Ggrep! "\b<cword>\b" <CR>
 
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
@@ -184,10 +183,6 @@ function! StripWhitespace()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
-
-
-" Save a file as root (,W)
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 set background=dark
 if has("gui_running")
