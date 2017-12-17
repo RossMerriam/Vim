@@ -20,27 +20,19 @@ else
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
 	Plugin 'gmarik/Vundle.vim'
-	Plugin 'Glench/Vim-Jinja2-Syntax'
-	Plugin 'lumiliet/vim-twig'			" Twig syntax hilighting
-	Plugin 'tpope/vim-surround'
+	Plugin 'Glench/Vim-Jinja2-Syntax'	" Jinja2 syntax highlighting
+	Plugin 'lumiliet/vim-twig'			" Twig syntax highlighting
+	Plugin 'tpope/vim-surround'			" One of TPope's masterpieces
 	Plugin 'tpope/vim-repeat'			" Adds repeat functionality to some plugins
 	Plugin 'tpope/vim-haml'				" runtime files for Haml, Sass, and SCSS
-	Plugin 'scrooloose/syntastic'
 	Plugin 'scrooloose/nerdtree'
-	Plugin 'mileszs/ack.vim'			" Ack configuration for vim
-	Plugin 'junegunn/fzf.vim'			" Additional fzf functionality
-	Plugin 'gregsexton/MatchTag'			" Highlights matching HTML tag
 	Plugin 'hail2u/vim-css3-syntax'			" CSS3 syntax support
 	Plugin 'vim-scripts/svg.vim'			" SVG syntax
 	Plugin 'jelera/vim-javascript-syntax'	" Better Javascript Sytax
 	Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
-	Plugin 'digitaltoad/vim-jade'
-	Plugin 'pearofducks/ansible-vim'
-	Plugin 'mattn/emmet-vim'
 
 	" Colorschemes
 	Plugin 'morhetz/gruvbox'
-	Plugin 'blerins/flattown'
 
 	" All of your Plugins must be added before the following line
 	call vundle#end()	
@@ -160,20 +152,6 @@ autocmd BufNewFile,BufRead *.scss             set ft=scss.css
 " Nerdtree Ignore
 let NERDTreeIgnore = ['\.pyc$']
 
-" Fzf support
-set rtp+=/usr/local/opt/fzf
-
-" Fzf keybindings
-nmap ; :Buffers<CR>
-nmap <Leader>t :Files<CR>
-nmap <Leader>r :Tags<CR>
-
-" Ack keybindings
-" nmap <M-k>    :Ack! "\b<cword>\b" <CR>
-" nmap <Esc>k   :Ack! "\b<cword>\b" <CR>
-" nmap <M-S-k>  :Ggrep! "\b<cword>\b" <CR>
-" nmap <Esc>K   :Ggrep! "\b<cword>\b" <CR>
-
 " Strip trailing whitespace (,ss)
 function! StripWhitespace()
 	let save_cursor = getpos(".")
@@ -185,8 +163,4 @@ endfunction
 noremap <leader>ss :call StripWhitespace()<CR>
 
 set background=dark
-if has("gui_running")
-	colorscheme gruvbox
-else
-	colorscheme flattown
-endif
+colorscheme gruvbox
