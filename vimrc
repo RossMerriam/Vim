@@ -66,19 +66,7 @@ set shiftwidth=4				" use 4 spaces instead of tabs
 set expandtab					" tabs are spaces not tabs
 "
 " Gui Options
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 16
-  elseif has("gui_photon")
-    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
-  elseif has("gui_kde")
-    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
-  elseif has("x11")
-    set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium:16
-  else
-	set guifont=Sauce\ Code\ Powerline\ Light:h16 	
-  endif
-endif
+set guifont=Source\ Code\ Pro\ for\ Powerline:h16 	
 
 set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
