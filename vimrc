@@ -31,6 +31,7 @@ else
 	Plugin 'cakebaker/scss-syntax.vim'		" SCSS syntax
 	Plugin 'nvie/vim-flake8'				" Flake8 syntax checker
 	Plugin 'leafgarland/typescript-vim'		" Typescript support
+	Plugin 'chase/vim-ansible-yaml'			" Yaml Syntax
 
 	" Colorschemes
 	Plugin 'morhetz/gruvbox'
@@ -83,6 +84,9 @@ set tabstop=4					" number of visual spaces per TAB
 set softtabstop=4				" number of spaces in tab when editing
 set shiftwidth=4				" use 4 spaces instead of tabs
 set expandtab					" tabs are spaces not tabs
+
+autocmd FileType yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+
 "
 " Gui Options
 set guifont=Source\ Code\ Pro\ for\ Powerline:h16 	
